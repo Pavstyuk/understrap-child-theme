@@ -19,21 +19,21 @@ $container = get_theme_mod('understrap_container_type');
 
     <div class="<?php echo esc_attr($container); ?>" id="content" tabindex="-1">
 
-        <div class="row">
 
-            <main class="site-main" id="main">
 
-                <?php
+        <main class="site-main" id="main">
+
+            <?php
                 if (have_posts()) {
                 ?>
-                <header class="page-header mb-5">
-                    <?php
+            <header class="page-header mb-5">
+                <?php
                         the_archive_title('<h1 class="page-title">', '</h1>');
                         ?>
-                </header><!-- .page-header -->
+            </header><!-- .page-header -->
 
-                <div class="row">
-                    <?php
+            <div class="row">
+                <?php
                     // Start the loop.
                     while (have_posts()) {
                         the_post();
@@ -49,19 +49,17 @@ $container = get_theme_mod('understrap_container_type');
                     get_template_part('loop-templates/content', 'none');
                 }
                     ?>
-                </div>
+            </div>
 
-            </main>
+        </main>
 
-            <?php
+        <?php
             // Display the pagination component.
             understrap_pagination();
 
             // Do the right sidebar check and close div#primary.
             get_template_part('global-templates/right-sidebar-check');
             ?>
-
-        </div><!-- .row -->
 
     </div><!-- #content -->
 

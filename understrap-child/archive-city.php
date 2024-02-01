@@ -19,49 +19,45 @@ $container = get_theme_mod('understrap_container_type');
 
     <div class="<?php echo esc_attr($container); ?>" id="content" tabindex="-1">
 
-        <div class="row">
+        <main class="site-main" id="main">
 
-            <main class="site-main" id="main">
-
-                <?php
-                if (have_posts()) {
-                ?>
-                    <header class="page-header mb-5">
-                        <?php
-                        the_archive_title('<h1 class="page-title my-2">', '</h1>');
-                        ?>
-                    </header><!-- .page-header -->
-
-                    <div class="row">
+            <?php
+            if (have_posts()) {
+            ?>
+                <header class="page-header mb-5">
                     <?php
-                    // Start the loop.
-                    while (have_posts()) {
-                        the_post();
+                    the_archive_title('<h1 class="page-title my-2">', '</h1>');
+                    ?>
+                </header><!-- .page-header -->
 
-                        /*
+                <div class="row">
+                <?php
+                // Start the loop.
+                while (have_posts()) {
+                    the_post();
+
+                    /*
 						 * Include the Post-Format-specific template for the content.
 						 * If you want to override this in a child theme, then include a file
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
-                        get_template_part('loop-templates/content', 'archive-city');
-                    }
-                } else {
-                    get_template_part('loop-templates/content', 'none');
+                    get_template_part('loop-templates/content', 'archive-city');
                 }
-                    ?>
-                    </div>
+            } else {
+                get_template_part('loop-templates/content', 'none');
+            }
+                ?>
+                </div>
 
-            </main>
+        </main>
 
-            <?php
-            // Display the pagination component.
-            understrap_pagination();
+        <?php
+        // Display the pagination component.
+        understrap_pagination();
 
-            // Do the right sidebar check and close div#primary.
-            get_template_part('global-templates/right-sidebar-check');
-            ?>
-
-        </div><!-- .row -->
+        // Do the right sidebar check and close div#primary.
+        get_template_part('global-templates/right-sidebar-check');
+        ?>
 
     </div><!-- #content -->
 

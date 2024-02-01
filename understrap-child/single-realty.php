@@ -16,10 +16,9 @@ $container = get_theme_mod('understrap_container_type');
 
     <div class="<?php echo esc_attr($container); ?>" id="content" tabindex="-1">
 
-        <div class="row">
-            <main class="site-main" id="main">
+        <main class="site-main" id="main">
 
-                <?php
+            <?php
                 while (have_posts()) {
                     the_post();
                     get_template_part('/loop-templates/content', 'realty');
@@ -32,9 +31,7 @@ $container = get_theme_mod('understrap_container_type');
                 }
                 ?>
 
-            </main>
-
-        </div><!-- .row -->
+        </main>
 
     </div><!-- #content -->
 
