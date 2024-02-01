@@ -1,0 +1,43 @@
+/*
+Theme Name: Understrap Child
+Template: understrap
+Theme URI: https://understrap.com
+Author: Howard Development &amp; Consulting
+Author URI: https://howarddc.com
+GitHub Theme URI: https://github.com/understrap/understrap
+Description: Understrap Child - BASIC.TECH test task
+Version: 1.0.0
+*/
+
+@import url("../understrap/style.css");
+
+
+.entry-title.card-title {
+    font-size: 1.25rem;
+    font-weight: 900;
+    line-height: 0.85;
+}
+
+h1.entry-title.card-title {
+    font-size: 2rem;
+}
+
+a>.entry-title {
+    color: var(--gray);
+}
+
+
+#wrapper-footer a {
+    color: var(--gray-light);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0;
+    font-size: 0.875rem;
+    color: var(--gray)
+}
+
+input[type="file"] {
+    padding: 0.25rem;
+}
